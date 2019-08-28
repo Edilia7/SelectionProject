@@ -10,7 +10,7 @@ package com.SelectionProject.SelectionProject.controller;
 @CrossOrigin(origins = "*")
 
 @RestController
-@RequestMapping(value = "/form")
+@RequestMapping(value = "/age")
 public class AgeController {
 
     @Autowired

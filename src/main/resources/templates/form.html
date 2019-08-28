@@ -1,10 +1,208 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Form</title>
 </head>
 <body>
+<script>
+    function handler() {
+       var e = document.getElementById("selectEd");
+       var education = e.options[e.selectedIndex].value
+       var txt;
+var r = confirm("Press a button!");
+if (r == true) {
+  txt = "You pressed OK!";
+} else {
+  txt = "You pressed Cancel!";
+}
+alert(txt);
+    }
+</script>
+<h1>Welcome to the selection service</h1>
+<hr>
+<p>Please answer the following questions to find out if you are a possible candidate</p>
 
+<form action="#" th:action="@{/form}" th:object="${form}" method="post">
+    How old are you?:<br>
+    <input type="text" th:field="age">
+    <br>
+    <br>
+
+    What is your educational level?:<br>
+    <select name="educationalLevel" id="selectEd">
+        <option value="disable selected">--Select an option--</option>
+        <option value="No studies">No studies</option>
+        <option value="High school">High school</option>
+        <option value="One year post-secondary credential">One year post-secondary credential</option>
+        <option value="Two year post-secondary credential">Two year post-secondary credential</option>
+        <option value="Bachelor Degree">Bachelor Degree</option>
+        <option value="Master">Master</option>
+        <option value="Doctoral">Doctoral</option>
+    </select>
+    <br>
+    <br>
+
+    What is your educational training?:<br>
+    <select name="educational training">
+        <option value="disable selected">--Select an option--</option>
+        <option value="IT">IT</option>
+        <option value="Nurse">Nurse</option>
+        <option value="Banking Area">Banking Area</option>
+        <option value="Engineer">Engineer</option>
+        <option value="Other">Other</option>
+    </select>
+    <br>
+    <br>
+
+    Do you have a valid language certificate? (submitted his exam less than 2 years ago):<br>
+    <select name="language1">
+        <option value="disable selected">--Select an option--</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+    <br>
+    <br>
+
+    Please enter the result of your exam:<br>
+    <select name="language">
+        <option value="disable selected">--Select an option--</option>
+        <option value="CLB 7">Listening = 249 - 279, Reading = 207 - 232, Writing = 310 - 348, Speaking = 310 - 348 || Listening = 6, Reading = 6, Writing = 6, Speaking = 6</option>
+        <option value="CLB 8">Listening = 280 - 297, Reading = 233 - 247, Writing = 349 - 370, Speaking = 349 - 370 || Listening = 7.5, Reading = 6.5, Writing = 6.5, Speaking = 6.5</option>
+        <option value="CLB 9">Listening = 298 - 315, Reading = 248 - 262, Writing = 371 - 392, Speaking = 371 - 392 || Listening = 8, Reading = 7 - 7.5, Writing = 7, Speaking = 7</option>
+        <option value="CLB 10+">Listening > 315, Reading > 262, Writing > 392 && speaking > 392 || Listening >= 8.5, Reading >= 8, Writing >= 7.5, Speaking >= 7.5</option>
+    </select>
+    <br>
+    <br>
+
+    How many months of work experience do you have?:<br>
+    <select name="workExperience">
+        <option value="disable selected">--Select an option--</option>
+        <option value="0-6">0-6</option>
+        <option value="6-24">6-24</option>
+        <option value="24-48">24-48</option>
+        <option value=">48">>48</option>
+    </select>
+    <br>
+    <br>
+
+    How long have you been in Canada (answer in day)?:<br>
+    <select name="stayCanada">
+        <option value="disable selected">--Select an option--</option>
+        <option value="14-90">14-90</option>
+        <option value="90-180">90-180</option>
+        <option value=">180">>180</option>
+    </select>
+    <br>
+    <br>
+
+    If you have family in Canada, please select the number corresponding to the relationship:<br>
+    <select name="familyCanada">
+        <option value="disable selected">--Select an option--</option>
+        <option value="Parents">Parents</option>
+        <option value="Son/Daughter">Son/Daughter</option>
+        <option value="Wife/Husband">Wife/Husband</option>
+        <option value="Grandfather/Grandmother">Grandfather/Grandmother</option>
+        <option value="Sister/Brother">Sister/Brother</option>
+        <option value="Other">Other</option>
+    </select>
+    <br>
+    <br>
+
+    How many children under 21 are you?:<br>
+    <select name="children">
+        <option value="disable selected">--Select an option--</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2 or more">2 or more</option>
+    </select>
+    <br>
+    <br>
+
+    <script language="JavaScript">
+        var points;
+            if (
+
+    </script>
+
+
+
+    Are you married?: <br>
+    <select name="married">
+        <option value="disable selected">--Select an option--</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+    <br>
+    <br>
+
+
+    </div>
+<div>
+    <P>Accompanying information</P>
+    How old are you?:<br>
+    <input type="text" name="age">
+    <br>
+    <br>
+
+    What is your educational level?:<br>
+    <select name="educational level">
+        <option value="disable selected">--Select an option--</option>
+        <option value="No studies">No studies</option>
+        <option value="High school">High school</option>
+        <option value="One year post-secondary credential">One year post-secondary credential</option>
+        <option value="Two year post-secondary credential">Two year post-secondary credential</option>
+        <option value="Bachelor Degree">Bachelor Degree</option>
+        <option value="Master">Master</option>
+        <option value="Doctoral">Doctoral</option>
+        <option value="N/A">N/A</option>
+    </select>
+    <br>
+    <br>
+
+    What is your educational training?:<br>
+    <select name="educational training">
+        <option value="disable selected">--Select an option--</option>
+        <option value="IT">IT</option>
+        <option value="Nurse">Nurse</option>
+        <option value="Banking Area">Banking Area</option>
+        <option value="Engineer">Engineer</option>
+        <option value="Other">Other</option>
+        <option value="N/A">N/A</option>
+    </select>
+    <br>
+    <br>
+
+    Do you have a valid language certificate? (submitted his exam less than 2 years ago):<br>
+    <select name="language1">
+        <option value="disable selected">--Select an option--</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+        <option value="N/A">N/A</option>
+
+    </select>
+    <br>
+    <br>
+
+    Please enter the result of your exam:<br>
+    <select name="language">
+        <option value="disable selected">--Select an option--</option>
+        <option value="CLB 7">Listening = 249 - 279, Reading = 207 - 232, Writing = 310 - 348, Speaking = 310 - 348 || Listening = 6, Reading = 6, Writing = 6, Speaking = 6</option>
+        <option value="CLB 8">Listening = 280 - 297, Reading = 233 - 247, Writing = 349 - 370, Speaking = 349 - 370 || Listening = 7.5, Reading = 6.5, Writing = 6.5, Speaking = 6.5</option>
+        <option value="CLB 9">Listening = 298 - 315, Reading = 248 - 262, Writing = 371 - 392, Speaking = 371 - 392 || Listening = 8, Reading = 7 - 7.5, Writing = 7, Speaking = 7</option>
+        <option value="CLB 10+">Listening > 315, Reading > 262, Writing > 392 && speaking > 392 || Listening >= 8.5, Reading >= 8, Writing >= 7.5, Speaking >= 7.5</option>
+        <option value="N/A">N/A</option>
+    </select>
+    <br>
+    <br>
+</div>
+
+    <input type="submit" value="Submit">
+    <button type="button" onclick="handler()">Click Me!</button>
+</form>
+
+
+
+<!--<button>Click me</button>-->
 </body>
 </html>
