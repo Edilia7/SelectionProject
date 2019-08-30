@@ -7,63 +7,110 @@
 <body>
 <script>
     function handler() {
-       var e = document.getElementById("selectEd");
-       var education = e.options[e.selectedIndex].value
-       var txt;
-var r = confirm("Press a button!");
-if (r == true) {
-  txt = "You pressed OK!";
-} else {
-  txt = "You pressed Cancel!";
-}
-alert(txt);
+       var e = document.getElementById("educationalLevel");
+       var education = Number(e.options[e.selectedIndex].value);
+       var t = document.getElementById("training");
+       var trainingPoints = Number(t.options[t.selectedIndex].value);
+       alert(education + trainingPoints)
+
+<!--       var txt;-->
+<!--var r = confirm("Press a button!");-->
+<!--if (r == true) {-->
+<!--  txt = "You pressed OK!";-->
+<!--} else {-->
+<!--  txt = "You pressed Cancel!";-->
+<!--}-->
+<!--alert(txt);-->
     }
+
+function showmarried(){
+if (document.form.marriedYes.checked == true) {document.getElementById('married').style.display='block';
+} else {
+document.getElementById('married').style.display='none';
+}
+}
+
+function showlanguage(){
+if (document.form.languageYes.checked == true) {document.getElementById('language').style.display='block';
+} else {
+document.getElementById('language').style.display='none';
+}
+}
+
+function showlanguage2(){
+if (document.form.languageYes2.checked == true) {document.getElementById('language2').style.display='block';
+} else {
+document.getElementById('language2').style.display='none';
+}
+}
+
 </script>
 <h1>Welcome to the selection service</h1>
 <hr>
 <p>Please answer the following questions to find out if you are a possible candidate</p>
 
-<form action="#" th:action="@{/form}" th:object="${form}" method="post">
+<form action="#" th:action="@{/form}" th:object="${form}" method="post" name="form">
     How old are you?:<br>
-    <input type="text" th:field="age">
-    <br>
-    <br>
-
-    What is your educational level?:<br>
-    <select name="educationalLevel" id="selectEd">
+    <select name="age" id="age">
         <option value="disable selected">--Select an option--</option>
-        <option value="No studies">No studies</option>
-        <option value="High school">High school</option>
-        <option value="One year post-secondary credential">One year post-secondary credential</option>
-        <option value="Two year post-secondary credential">Two year post-secondary credential</option>
-        <option value="Bachelor Degree">Bachelor Degree</option>
-        <option value="Master">Master</option>
-        <option value="Doctoral">Doctoral</option>
+        <option value=16>18 - 35</option>
+        <option value=14>36</option>
+        <option value=12>37</option>
+        <option value=10>38</option>
+        <option value=8>39</option>
+        <option value=6>40</option>
+        <option value=4>41</option>
+        <option value=2>42</option>
+        <option value=0>>43</option>
     </select>
     <br>
     <br>
 
-    What is your educational training?:<br>
-    <select name="educational training">
+    What is your educational level?:<br>
+    <select name="educationalLevel" id="educationalLevel">
         <option value="disable selected">--Select an option--</option>
-        <option value="IT">IT</option>
-        <option value="Nurse">Nurse</option>
-        <option value="Banking Area">Banking Area</option>
-        <option value="Engineer">Engineer</option>
-        <option value="Other">Other</option>
+        <option value=0>No studies</option>
+        <option value=2>High school</option>
+        <option value=6>One year post-secondary credential</option>
+        <option value=8>Two year post-secondary credential</option>
+        <option value=10>Bachelor Degree</option>
+        <option value=12>Master</option>
+        <option value=14>Doctoral</option>
+    </select>
+    <br>
+    <br>
+
+    <p> Have you earned a Canadian degree, diploma or certificate?<br>
+    Note: to answer yes:
+
+    English or French as a Second Language must not have made up more than half your study
+    you must not have studied under an award that required you to return to your home country after graduation to apply your skills and knowledge
+    you must have studied at a school within Canada (foreign campuses don’t count)
+    you had to be enrolled full time for at least eight months, and have been physically present in Canada for at least eight months<br>
+
+    <input type="radio" name="study" value="Yes" id="studyYes" onclick="showlanguage();" /> Yes<br>
+    <input type="radio" name="study" value="No" id="studyNo" onclick="showlanguage();" /> No<br>
+    <br>
+
+
+    What is your educational training?:<br>
+    <select name="educational training" id="training">
+        <option value="disable selected">--Select an option--</option>
+        <option value=12>IT</option>
+        <option value=10>Nurse</option>
+        <option value=8>Banking Area</option>
+        <option value=6>Engineer</option>
+        <option value=0>Other</option>
     </select>
     <br>
     <br>
 
     Do you have a valid language certificate? (submitted his exam less than 2 years ago):<br>
-    <select name="language1">
-        <option value="disable selected">--Select an option--</option>
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-    </select>
-    <br>
-    <br>
+    <input type="radio" name="language" value="Yes" id="languageYes" onclick="showlanguage();" /> Yes<br>
+    <input type="radio" name="language" value="No" id="languageNo" onclick="showlanguage();" /> No<br>
+    
 
+<div id="language" style="display:none;">
     Please enter the result of your exam:<br>
     <select name="language">
         <option value="disable selected">--Select an option--</option>
@@ -74,6 +121,26 @@ alert(txt);
     </select>
     <br>
     <br>
+
+    Want to add another language test?:<br>
+    <input type="radio" name="language2" value="Yes" id="languageYes2" onclick="showlanguage2();" /> Yes<br>
+    <input type="radio" name="language2" value="No" id="languageNo2" onclick="showlanguage2();" /> No<br>
+    <br>
+</div>
+
+    <div id="language2" style="display:none;">
+        Please enter the result of your test:<br>
+        <select name="language2">
+            <option value="disable selected">--Select an option--</option>
+            <option value="CLB 7">Listening = 249 - 279, Reading = 207 - 232, Writing = 310 - 348, Speaking = 310 - 348 || Listening = 6, Reading = 6, Writing = 6, Speaking = 6</option>
+            <option value="CLB 8">Listening = 280 - 297, Reading = 233 - 247, Writing = 349 - 370, Speaking = 349 - 370 || Listening = 7.5, Reading = 6.5, Writing = 6.5, Speaking = 6.5</option>
+            <option value="CLB 9">Listening = 298 - 315, Reading = 248 - 262, Writing = 371 - 392, Speaking = 371 - 392 || Listening = 8, Reading = 7 - 7.5, Writing = 7, Speaking = 7</option>
+            <option value="CLB 10+">Listening > 315, Reading > 262, Writing > 392 && speaking > 392 || Listening >= 8.5, Reading >= 8, Writing >= 7.5, Speaking >= 7.5</option>
+        </select>
+        <br>
+        <br>
+    </div>
+
 
     How many months of work experience do you have?:<br>
     <select name="workExperience">
@@ -119,27 +186,13 @@ alert(txt);
     <br>
     <br>
 
-    <script language="JavaScript">
-        var points;
-            if (
-
-    </script>
-
-
-
     Are you married?: <br>
-    <select name="married">
-        <option value="disable selected">--Select an option--</option>
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-    </select>
-    <br>
-    <br>
+    <input type="radio" name="married" value="Yes" id="marriedYes" onclick="showmarried();" /> Yes<br>
+    <input type="radio" name="married" value="No" id="marriedNo" onclick="showmarried();" /> No<br>
 
 
-    </div>
-<div>
-    <P>Accompanying information</P>
+<div id="married" style="display:none;">
+    <h4>Accompanying information</h4>
     How old are you?:<br>
     <input type="text" name="age">
     <br>
