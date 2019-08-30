@@ -44,6 +44,17 @@ document.getElementById('language2').style.display='none';
 }
 }
 
+function showStudy(){
+if (document.form.studyYes.checked == true) {
+document.getElementById('trainingCanada').style.display='block';
+document.getElementById('trainingOut').style.display='none'
+} else {
+document.getElementById('trainingCanada').style.display='none'
+document.getElementById('trainingOut').style.display='block';
+}
+}
+
+
 </script>
 <h1>Welcome to the selection service</h1>
 <hr>
@@ -80,35 +91,48 @@ document.getElementById('language2').style.display='none';
     <br>
     <br>
 
-    <p> Have you earned a Canadian degree, diploma or certificate?<br>
-    Note: to answer yes:
-
-    English or French as a Second Language must not have made up more than half your study
-    you must not have studied under an award that required you to return to your home country after graduation to apply your skills and knowledge
-    you must have studied at a school within Canada (foreign campuses don’t count)
+    Have you earned a Canadian degree, diploma or certificate?<br>
+    Note: to answer yes:<br>
+    English or French as a Second Language must not have made up more than half your study<br>
+    you must not have studied under an award that required you to return to your home country after graduation to apply your skills and knowledge<br>
+    you must have studied at a school within Canada (foreign campuses don’t count)<br>
     you had to be enrolled full time for at least eight months, and have been physically present in Canada for at least eight months<br>
-
-    <input type="radio" name="study" value="Yes" id="studyYes" onclick="showlanguage();" /> Yes<br>
-    <input type="radio" name="study" value="No" id="studyNo" onclick="showlanguage();" /> No<br>
+    <input type="radio" name="study" value="Yes" id="studyYes" onclick="showStudy();" /> Yes<br>
+    <input type="radio" name="study" value="No" id="studyNo" onclick="showStudy();" /> No<br>
     <br>
 
-
+<div id="trainingCanada" style="display:none;">
     What is your educational training?:<br>
     <select name="educational training" id="training">
         <option value="disable selected">--Select an option--</option>
-        <option value=12>IT</option>
-        <option value=10>Nurse</option>
-        <option value=8>Banking Area</option>
-        <option value=6>Engineer</option>
-        <option value=0>Other</option>
+        <option value=20>IT</option>
+        <option value=18>Nurse</option>
+        <option value=16>Banking Area</option>
+        <option value=14>Engineer</option>
+        <option value=8>Other</option>
     </select>
     <br>
     <br>
+</div>
+
+    <div id="trainingOut" style="display:none;">
+        What is your educational training?:<br>
+        <select name="educational training" id="training1">
+            <option value="disable selected">--Select an option--</option>
+            <option value=12>IT</option>
+            <option value=10>Nurse</option>
+            <option value=8>Banking Area</option>
+            <option value=6>Engineer</option>
+            <option value=0>Other</option>
+        </select>
+        <br>
+        <br>
+    </div>
 
     Do you have a valid language certificate? (submitted his exam less than 2 years ago):<br>
     <input type="radio" name="language" value="Yes" id="languageYes" onclick="showlanguage();" /> Yes<br>
     <input type="radio" name="language" value="No" id="languageNo" onclick="showlanguage();" /> No<br>
-    
+
 
 <div id="language" style="display:none;">
     Please enter the result of your exam:<br>
@@ -208,7 +232,6 @@ document.getElementById('language2').style.display='none';
         <option value="Bachelor Degree">Bachelor Degree</option>
         <option value="Master">Master</option>
         <option value="Doctoral">Doctoral</option>
-        <option value="N/A">N/A</option>
     </select>
     <br>
     <br>
@@ -221,7 +244,6 @@ document.getElementById('language2').style.display='none';
         <option value="Banking Area">Banking Area</option>
         <option value="Engineer">Engineer</option>
         <option value="Other">Other</option>
-        <option value="N/A">N/A</option>
     </select>
     <br>
     <br>
@@ -231,8 +253,6 @@ document.getElementById('language2').style.display='none';
         <option value="disable selected">--Select an option--</option>
         <option value="Yes">Yes</option>
         <option value="No">No</option>
-        <option value="N/A">N/A</option>
-
     </select>
     <br>
     <br>
@@ -244,7 +264,6 @@ document.getElementById('language2').style.display='none';
         <option value="CLB 8">Listening = 280 - 297, Reading = 233 - 247, Writing = 349 - 370, Speaking = 349 - 370 || Listening = 7.5, Reading = 6.5, Writing = 6.5, Speaking = 6.5</option>
         <option value="CLB 9">Listening = 298 - 315, Reading = 248 - 262, Writing = 371 - 392, Speaking = 371 - 392 || Listening = 8, Reading = 7 - 7.5, Writing = 7, Speaking = 7</option>
         <option value="CLB 10+">Listening > 315, Reading > 262, Writing > 392 && speaking > 392 || Listening >= 8.5, Reading >= 8, Writing >= 7.5, Speaking >= 7.5</option>
-        <option value="N/A">N/A</option>
     </select>
     <br>
     <br>
