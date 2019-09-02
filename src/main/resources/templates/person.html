@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Person</title>
+<!--    <link rel="stylesheet" type="text/css" media="all"-->
+<!--          href="../selection.css" th:href="@{/selection.css}"/>-->
+</head>
+<body>
+<!--<div class="wrap">-->
+<!--    <ul class="tabs">-->
+<!--        <li><a href="#tab1"><span></span><span class="tab-text">Personal</span></a></li>-->
+<!--        <li><a href="#tab2"><span ></span><span class="tab-text">Education</span></a></li>-->
+<!--        <li><a href="#tab3"><span ></span><span class="tab-text">Work</span></a></li>-->
+<!--        <li><a href="#tab4"><span ></span><span class="tab-text">Languages</span></a></li>-->
+<!--        <li><a href="#tab5"><span ></span><span class="tab-text">Contact Canada</span></a></li>-->
+<!--        <li><a href="#tab6"><span ></span><span class="tab-text">Children</span></a></li>-->
+<!--        <li><a href="#tab7"><span ></span><span class="tab-text">Married</span></a></li>-->
+<!--        <li><a href="#tab8"><span ></span><span class="tab-text">Companion personal</span></a></li>-->
+<!--        <li><a href="#tab8"><span ></span><span class="tab-text">Companion education</span></a></li>-->
+<!--        <li><a href="#tab8"><span ></span><span class="tab-text">Companion language</span></a></li>-->
+<!--        <li><a href="#tab8"><span ></span><span class="tab-text">Companion Education</span></a></li>-->
+<!--    </ul>-->
+
+<!--    <div class="section">-->
+<!--        <article id="personal">-->
+<!--        <h3>Personal</h3>-->
+        <form action="#" th:action="@{/person}" th:object="${person}" method="post">
+            <p>First name: <input type="text" th:field="*{firstName}" /></p>
+            <p>Middle name: <input type="text" th:field="*{middleName}" /></p>
+            <p>Family name: <input type="text" th:field="*{familyName}" /></p>
+            <p>Age: <input type="text" th:field="*{age}" /></p>
+            <p>Date of birth: <input type="text" th:field="*{dateBirth}" /></p>
+            <p>City of birth: <input type="text" th:field="*{cityBirth}" /></p>
+            <p>Province of birth: <input type="text" th:field="*{provinceBirth}" /></p>
+            <p>Country of birth: <input type="text" th:field="*{countryBirth}" /></p>
+            <p>Nationality: <input type="text" th:field="*{nationality}" /></p>
+            <p>Sex: <input type="text" th:field="*{sex}" /></p>
+            <p>Civil Status: <input type="text" th:field="*{civilStatus}" /></p>
+<!--            <p>Civil Status:-->
+<!--            <select th:field="*{civilStatus}">-->
+<!--                <option value="Select an option">&#45;&#45;Select an option&#45;&#45;</option>-->
+<!--                <option value="Single">Single</option>-->
+<!--                <option value="Married">Married</option>-->
+<!--                <option value="Common-Law">Common-Law</option>-->
+<!--                <option value="Legally Separated">Legally Separated</option>-->
+<!--                <option value="Divorced">Divorced</option>-->
+<!--                <option value="Widowed">Widowed</option>-->
+<!--            </select></p>-->
+<!--            <h4>Contact information</h4>-->
+<!--            <p>Apt/Und: <input type="text" th:field="*{aptUnd}" /></p>-->
+<!--            <p>Street number: <input type="text" th:field="*{streetNumber}" /></p>-->
+<!--            <p>Street name: <input type="text" th:field="*{streetName}" /></p>-->
+<!--            <p>City: <input type="text" th:field="*{city}" /></p>-->
+<!--            <p>Province: <input type="text" th:field="*{province}" /></p>-->
+<!--            <p>Country: <input type="text" th:field="*{country}" /></p>-->
+<!--            <p>Postal code: <input type="text" th:field="*{postalCode}" /></p>-->
+<!--            <p>Type telephone: <input type="text" th:field="*{typeTelephone}" /></p>-->
+<!--            <p>Telephone Number: <input type="text" th:field="*{telephoneNumber}" /></p>-->
+<!--            <p>Email: <input type="text" th:field="*{email}" /></p>-->
+        </form>
+<!--        </article>-->
+<!--    </div>-->
+
+            <p><input type="submit" value="Save" /></p>
+<!--</div>-->
+
+
+
+
+</body>
+</html>

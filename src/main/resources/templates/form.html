@@ -42,12 +42,13 @@
        points = agePoints + educationPoints + trainingPoints + trainingPoints1 + languagePoints + languagePoints1 + workPoints + stayPoints + familyPoints + childrenPoints + ageMarriedPoints + educationMarriedPoints + trainingMarriedPoints + languageMarriedPoints;
 
        var answer;
+<!--       var co = confirm("Please");-->
        if (points >= 52 && document.form.marriedNo.checked == true) {
-       answer = "You were Selected";
+       answer = points + ", You were Selected ";
        }else if (points >= 59 && document.form.marriedYes.checked == true) {
-       answer = "You were Selected";
+       answer = points + ", You were Selected! ";
        }else {
-       answer = "You were not Selected";
+       answer = points + "You were not Selected";
        }
        alert(answer);
 
@@ -120,7 +121,7 @@ document.getElementById('languageMarried').style.display='none';
 <hr>
 <p>Please answer the following questions to find out if you are a possible candidate</p>
 
-<form action="#" th:action="@{/form}" th:object="${form}" method="post" name="form">
+<form  name="form">
     <b>How old are you?:</b><br>
     <FONT SIZE=2>The applicant must be over 18 years old</FONT><br>
     <select name="age" id="age">
@@ -273,7 +274,6 @@ document.getElementById('languageMarried').style.display='none';
         <option value=0>0</option>
         <option value=4>1</option>
         <option value=8>2 or more</option>
-        <option value=0>N/A</option>
     </select>
     <br>
     <br>
